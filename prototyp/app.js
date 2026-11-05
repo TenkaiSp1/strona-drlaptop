@@ -1,4 +1,15 @@
 (function(){
+  /* Po wejściu na podstronę zawsze zaczynamy od góry (podgląd na claude.ai zachowuje poprzednie przewinięcie).
+     Wyjątek: link do konkretnej sekcji, np. index.html#opinie. */
+  try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(e){}
+  function toTop(){
+    if(location.hash && location.hash.length>1) return;
+    try{ window.scrollTo(0,0); }catch(e){}
+    var t=document.querySelector('.proto');
+    if(t && t.scrollIntoView){ try{ t.scrollIntoView({block:'start'}); }catch(e){} }
+  }
+  toTop();
+  window.addEventListener('load', function(){ toTop(); setTimeout(toTop, 150); });
   var b=document.body, t=document.getElementById('notesToggle');
   var KEY='drl-notes';
   try{var v=localStorage.getItem(KEY); if(v!==null) t.checked=(v==='1');}catch(e){}
