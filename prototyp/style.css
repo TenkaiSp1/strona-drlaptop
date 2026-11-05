@@ -247,3 +247,24 @@ h3.cat{margin-top:28px}
 .review-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 @media (prefers-reduced-motion:reduce){.marquee{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.track{animation:none}}
 .tabs-links a{border:1px solid var(--line);border-radius:999px;padding:.35em .8em;text-decoration:none;font-weight:600;font-size:.9rem;background:var(--surface)}
+
+/* ---- średnie ekrany (np. podgląd w oknie claude.ai, małe laptopy, tablety) ---- */
+@media (max-width:1100px){
+  .hdr{gap:12px}
+  .hdr .tel{display:none}
+  nav.main{margin-left:4px;gap:2px}
+  nav.main a{padding:.45em .55em;font-size:.9rem}
+  .proto .lbl-long{display:none}
+}
+@media (min-width:761px) and (max-width:900px){
+  nav.main{display:flex}
+  .hdr .btn{display:inline-flex;padding:.65em 1em;font-size:.92rem}
+  .burger{display:none}
+  .sticky{display:none}
+  body{padding-bottom:0}
+  .ai-fab{bottom:16px}
+  .ai{bottom:88px}
+}
+@media (min-width:761px) and (max-width:860px){
+  nav.main a{padding:.4em .45em;font-size:.86rem}
+}
