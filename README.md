@@ -11,7 +11,7 @@ Projekt poprawy strony [drlaptop.pl](https://drlaptop.pl/) (WordPress + Elemento
 | `docs/audyt.md` | Audyt obecnej strony (stan z 05.11.2026) |
 | `docs/konkurencja.md` | Porównanie z serwisgdynia.pl i dobryserwis.eu |
 | `docs/plan.md` | Plan działań etapami, z checklistą |
-| `docs/drlaptop-plan-i-pomysly.xlsx` | Plan z kolumną statusu, decyzje szefa, pomysły (do wspólnego pliku na Proton Drive) |
+| `docs/drlaptop-podsumowanie.xlsx` | Krótkie podsumowanie: speed test, plan na 30 dni, co Piotrek może zrobić od razu (do wspólnego pliku na Proton Drive) |
 | `docs/pagespeed.md` | Poprawki szybkości na podstawie raportu PageSpeed |
 | `PageSpeed Insights.html` | Zapisany raport PageSpeed (telefon 68, komputer 84) |
 | `seo/schema-localbusiness.html` | Dane strukturalne do wklejenia (np. WPCode) |
