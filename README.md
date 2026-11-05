@@ -14,7 +14,8 @@ Projekt poprawy strony [drlaptop.pl](https://drlaptop.pl/) (WordPress + Elemento
 | `docs/pagespeed.md` | Poprawki szybkości na podstawie raportu PageSpeed |
 | `PageSpeed Insights.html` | Zapisany raport PageSpeed (telefon 68, komputer 84) |
 | `seo/schema-localbusiness.html` | Dane strukturalne do wklejenia (np. WPCode) |
-| `seo/tytuly-opisy.md` | Nowe tytuły i opisy podstron dla Yoast |
+| `seo/tytuly-opisy.md` | Tytuły, opisy i H1 dla wszystkich 39 podstron + 5 nowych |
+| `seo/podstrona-asus.md` | Nowa treść podstrony ASUS (wzór dla pozostałych marek) |
 
 ## Do uzupełnienia przez firmę
 - [ ] Ceny „od” dla ok. 10 najczęstszych usług
