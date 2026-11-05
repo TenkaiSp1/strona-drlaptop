@@ -38,7 +38,7 @@ Gdzie to wpisać: edycja podstrony → panel Yoast SEO pod treścią → „Tytu
 
 ## 3. Marki
 
-Wszystkie podstrony marek dostają ten sam układ treści co nowa podstrona ASUS (`seo/podstrona-asus.md`).
+Wszystkie podstrony marek dostają ten sam układ treści co nowa podstrona ASUS (`seo/marki/asus.md`). Gotowa treść każdej marki jest w folderze `seo/marki/`.
 
 | Podstrona | Główna fraza | Tytuł SEO | Opis meta | H1 |
 |---|---|---|---|---|

@@ -15,7 +15,8 @@ Projekt poprawy strony [drlaptop.pl](https://drlaptop.pl/) (WordPress + Elemento
 | `PageSpeed Insights.html` | Zapisany raport PageSpeed (telefon 68, komputer 84) |
 | `seo/schema-localbusiness.html` | Dane strukturalne do wklejenia (np. WPCode) |
 | `seo/tytuly-opisy.md` | Tytuły, opisy i H1 dla wszystkich 39 podstron + 5 nowych |
-| `seo/podstrona-asus.md` | Nowa treść podstrony ASUS (wzór dla pozostałych marek) |
+| `seo/marki/` | Nowa treść 8 podstron marek: ASUS, Apple, Lenovo, MSI, Dell, HP, Acer, Samsung |
+| `seo/marki/_wspolne-sekcje.md` | Sekcje wspólne dla wszystkich marek (szablony globalne Elementora) |
 
 ## Do uzupełnienia przez firmę
 - [ ] Ceny „od” dla ok. 10 najczęstszych usług
