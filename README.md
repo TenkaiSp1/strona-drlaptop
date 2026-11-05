@@ -7,7 +7,7 @@ Projekt poprawy strony [drlaptop.pl](https://drlaptop.pl/) (WordPress + Elemento
 ## Zawartość
 | Ścieżka | Co to jest |
 |---|---|
-| `prototyp/` | Klikalny prototyp: strona główna, cennik, zamów kuriera, laptopy gamingowe, wzór podstrony marki (ASUS). Otwórz `prototyp/index.html` w przeglądarce. Przełącznik „Notatki SEO” na górze. |
+| `prototyp/` | Klikalny prototyp: strona główna, cennik, zamów kuriera, laptopy gamingowe, podstrony 8 marek (ASUS, Apple, Lenovo, MSI, Dell, HP, Acer, Samsung). Otwórz `prototyp/index.html` w przeglądarce. Przełącznik „Notatki SEO” na górze. |
 | `docs/audyt.md` | Audyt obecnej strony (stan z 05.11.2026) |
 | `docs/konkurencja.md` | Porównanie z serwisgdynia.pl i dobryserwis.eu |
 | `docs/plan.md` | Plan działań etapami, z checklistą |
