@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serwis laptopów z kurierem – cała Polska | drLAPTOP (prototyp)</title>
+<meta name="description" content="Kurier odbierze laptopa z domu lub nadasz go w Paczkomacie. Diagnoza, wycena przed naprawą, zwrot kurierem z gwarancją.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="proto">
+  <div class="wrap">
+    <span>🧪 <b>PROTOTYP</b> drLAPTOP · ceny „…” do uzupełnienia</span>
+    <nav class="pages" aria-label="Strony prototypu"><a href="index.html">Główna</a><a href="cennik.html">Cennik</a><a href="zamow-kuriera.html" aria-current="page">Zamów kuriera</a><a href="serwis-laptopow-gamingowych.html">Laptopy gamingowe</a><a href="asus.html">ASUS (wzór marki)</a></nav>
+    <label><input type="checkbox" id="notesToggle" checked> Notatki SEO</label>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap hdr">
+    <a class="logo" href="index.html">dr<span>LAPTOP</span></a>
+    <nav class="main" aria-label="Menu główne"><a href="index.html#serwis">Serwis</a><a href="serwis-laptopow-gamingowych.html">Gaming</a><a href="index.html#it">IT dla firm</a><a href="cennik.html">Cennik</a><a href="index.html#sklep">Sklep</a><a href="index.html#kontakt">Kontakt</a></nav>
+    <div class="right">
+      <a class="tel" href="tel:+48585005510">📞 58 500 55 10</a>
+      <a class="btn btn-accent" href="zamow-kuriera.html" data-courier>📦 Zamów kuriera</a>
+      <button class="burger" aria-label="Menu" id="burger">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mnav"><a href="index.html#serwis">Serwis</a><a href="serwis-laptopow-gamingowych.html">Gaming</a><a href="index.html#it">IT dla firm</a><a href="cennik.html">Cennik</a><a href="index.html#sklep">Sklep</a><a href="index.html#kontakt">Kontakt</a><a href="index.html#blog">Blog</a><a href="zamow-kuriera.html">📦 Zamów kuriera</a></div>
+</header>
+
+<main>
+<section class="page-hero"><div class="wrap">
+<div class="crumbs"><a href="index.html">Start</a> › Zamów kuriera</div>
+<h1>Serwis laptopów z kurierem – z całej Polski</h1>
+<p class="lead">Zamów kuriera, a odbierzemy Twojego laptopa spod wskazanego adresu albo nadasz go w Paczkomacie InPost. Po diagnozie zadzwonimy z wyceną, a po naprawie laptop wróci do Ciebie kurierem, razem z pisemną gwarancją.</p>
+<div class="hero-cta"><a class="btn btn-accent" href="#formularz" data-courier>📦 Wypełnij formularz</a><a class="btn btn-ghost" href="tel:+48585005510">📞 58 500 55 10</a></div>
+</div></section>
+<section style="background:var(--surface-2)"><div class="wrap">
+<h2>Jak to działa</h2>
+<div class="grid3">
+<div class="card step"><div class="n">1</div><h3>Zamawiasz kuriera</h3><p class="muted">Formularz zajmuje minutę. Dostajesz SMS i e-mail z numerem zlecenia oraz etykietą lub kodem nadania.</p></div>
+<div class="card step"><div class="n">2</div><h3>Diagnoza i wycena</h3><p class="muted">Zwykle w ciągu 24 h od dotarcia laptopa dzwonimy z wyceną. Nic nie naprawiamy bez Twojej zgody.</p></div>
+<div class="card step"><div class="n">3</div><h3>Naprawa i zwrot</h3><p class="muted">SMS-y o statusie, płatność przelewem lub BLIK-iem, zwrot kurierem albo do Paczkomatu.</p></div>
+</div>
+<div class="carriers"><span>InPost</span><span>DPD</span><span>DHL</span><span>Paczkomaty</span></div>
+</div></section>
+<section><div class="wrap">
+<div class="grid2">
+<div>
+<h2>Ile to kosztuje</h2>
+<table class="price"><thead><tr><th>Usługa</th><th>Cena</th><th>Uwagi</th></tr></thead><tbody><tr><td>Kurier do serwisu i z powrotem</td><td>… zł</td><td>cała Polska</td></tr><tr><td>Kurier przy naprawie powyżej … zł</td><td><b>0 zł</b></td><td>opcjonalnie</td></tr><tr><td>Diagnoza przy naprawie</td><td>0 zł</td><td>—</td></tr><tr><td>Ubezpieczenie przesyłki</td><td>w cenie</td><td>do … zł</td></tr></tbody></table>
+<p style="margin-top:10px">Ceny napraw: <a href="cennik.html">Cennik</a>.</p>
+</div>
+<div id="formularz">
+<h2>Formularz zamówienia</h2>
+<div class="card inline-form"><form class="form" >
+      <div class="opts">
+        <label><input type="radio" name="t" checked> Kurier odbiera z adresu</label>
+        <label><input type="radio" name="t"> Nadam w Paczkomacie InPost</label>
+      </div>
+      <label>Imię i nazwisko<input required autocomplete="name"></label>
+      <label>Telefon<input required type="tel" autocomplete="tel"></label>
+      <label>E-mail<input required type="email" autocomplete="email"></label>
+      <label>Adres odbioru<input required autocomplete="street-address" placeholder="ulica, kod, miasto"></label>
+      <label>Urządzenie<select><option>Laptop gamingowy</option><option>MacBook</option><option>ThinkPad / laptop biznesowy</option><option>Inny laptop</option><option>Komputer PC</option></select></label>
+      <label>Marka i model<input placeholder="np. ASUS ROG Strix G15"></label>
+      <label>Co się dzieje?<textarea rows="3" placeholder="np. przegrzewa się i wyłącza podczas gier"></textarea></label>
+      <label style="flex-direction:row;display:flex;gap:8px;font-weight:500"><input type="checkbox" required> Akceptuję regulamin serwisu i zasady przetwarzania danych (RODO)</label>
+      <button class="btn btn-accent" type="submit">Zamawiam kuriera</button>
+      <div class="ok">✅ <b>Prototyp:</b> tu nastąpi integracja z Furgonetką lub BaseLinkerem (etykieta i zamówienie odbioru) oraz utworzenie zlecenia w Subiekcie. Klient dostaje SMS z numerem zlecenia.</div>
+    </form></div>
+<div class="note"><b>Notatka:</b> w wersji docelowej formularz (Fluent Forms lub Gravity Forms) tworzy przesyłkę w Furgonetce lub BaseLinkerze i zlecenie w Subiekcie, a klient dostaje SMS z numerem zlecenia. Wysłanie formularza mierzymy w GA4 jako konwersję.</div>
+</div>
+</div>
+</div></section>
+<section style="background:var(--surface-2)"><div class="wrap">
+<div class="grid2">
+<div class="card"><h3>📦 Jak zapakować laptopa</h3><ul class="pack">
+<li>Karton (najlepiej oryginalny), nie koperta.</li>
+<li>Folia bąbelkowa i wypełnienie, żeby laptop się nie przesuwał.</li>
+<li>Ładowarka tylko, gdy problem dotyczy ładowania lub baterii.</li>
+<li>Wyjmij pendrive'y, karty pamięci i płyty.</li>
+<li>Kartka z numerem zlecenia w środku.</li>
+<li><b>Po zalaniu:</b> nie włączaj, nie ładuj, wyślij od razu.</li></ul></div>
+<div class="card"><h3>🔐 Zanim wyślesz</h3><ul class="pack">
+<li><b>Zrób kopię ważnych danych</b>, jeśli laptop się uruchamia.</li>
+<li>Podaj hasło do Windowsa lub konta Mac (w formularzu albo telefonicznie) albo utwórz konto tymczasowe.</li>
+<li><b>MacBook:</b> wyloguj się z iCloud albo podaj hasło do konta użytkownika.</li></ul></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2>Najczęstsze pytania</h2>
+<details><summary>Skąd odbieracie laptopy?</summary><p>Z całej Polski. W Trójmieście możesz też oddać laptopa w serwisie w Gdyni albo w punktach przyjęć w Gdańsku i Redzie.</p></details><details><summary>Ile trwa cała naprawa z wysyłką?</summary><p>Przesyłka w jedną stronę trwa zwykle 1–2 dni robocze, naprawa najczęściej 1–3 dni, a naprawy płyty głównej do 7 dni.</p></details><details><summary>Co, jeśli nie zgodzę się na naprawę?</summary><p>Odeślemy laptopa. Pobieramy wtedy opłatę za diagnozę (… zł) i koszt odesłania.</p></details><details><summary>Czy przesyłka jest ubezpieczona?</summary><p>Tak, do kwoty … zł.</p></details><details><summary>Jak zapłacę za naprawę?</summary><p>Przelewem lub BLIK-iem po naprawie, przed odesłaniem laptopa. Fakturę wysyłamy e-mailem.</p></details><details><summary>Czy mogę śledzić status naprawy?</summary><p>Tak. Wysyłamy SMS przy każdej zmianie statusu: przyjęcie, diagnoza, naprawa, wysyłka.</p></details>
+<div class="note"><b>Notatka:</b> regulamin serwisu wysyłkowego dla klientów indywidualnych powinien sprawdzić prawnik (umowa zawierana na odległość, prawa konsumenta).</div>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>drLAPTOP</h4><p>drLAPTOP Piotr Winnik<br>ul. Świętojańska 55/3A, 81-393 Gdynia<br>NIP 9581439296</p><p><a href="tel:+48585005510">58 500 55 10</a> · <a href="mailto:kontakt@drlaptop.pl">kontakt@drlaptop.pl</a></p></div>
+      <div><h4>Serwis</h4><ul><li><a href="#">Wymiana matrycy</a></li><li><a href="#">Wymiana baterii</a></li><li><a href="#">Po zalaniu</a></li><li><a href="serwis-laptopow-gamingowych.html">Laptopy gamingowe</a></li><li><a href="asus.html">Serwis ASUS</a></li></ul></div>
+      <div><h4>IT dla firm</h4><ul><li><a href="#">Obsługa IT</a></li><li><a href="#">Backup Xopero</a></li><li><a href="#">Bitdefender</a></li><li><a href="#">Serwery i sieci</a></li></ul></div>
+      <div><h4>Informacje</h4><ul><li><a href="cennik.html">Cennik</a></li><li><a href="zamow-kuriera.html">Zamów kuriera</a></li><li><a href="index.html#blog">Blog</a></li><li><a href="#">Regulamin</a></li><li><a href="index.html#kontakt">Kontakt</a></li></ul></div>
+    </div>
+    <p style="margin-top:24px;opacity:.7">© 2026 drLAPTOP · Serwis laptopów Gdynia · Punkty przyjęć: Gdańsk, Reda</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn btn-ghost" href="tel:+48585005510">📞 Zadzwoń</a>
+  <a class="btn btn-accent" href="zamow-kuriera.html" data-courier>📦 Zamów kuriera</a>
+</div>
+
+<button class="ai-fab" id="aiFab" aria-label="Asystent AI">💬</button>
+<div class="ai" id="ai" role="dialog" aria-label="Asystent drLAPTOP">
+  <header><b>Asystent drLAPTOP</b><button id="aiClose" aria-label="Zamknij">×</button></header>
+  <div class="msgs" id="msgs"><div class="m bot">Cześć! Pomogę wycenić naprawę, zamówić kuriera albo sprawdzić status zlecenia. W czym pomóc?</div></div>
+  <div class="qs">
+    <button data-q="matryca">Ile kosztuje wymiana matrycy?</button>
+    <button data-q="zalanie">Zalałem laptopa</button>
+    <button data-q="kurier">Jak wysłać laptopa?</button>
+    <button data-q="status">Status naprawy</button>
+  </div>
+</div>
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
