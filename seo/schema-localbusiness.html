@@ -1,0 +1,46 @@
+<!-- Wkleić raz, w nagłówku strony głównej (np. wtyczką WPCode).
+     Przed wklejeniem: wyłączyć stary ręczny kod LocalBusiness,
+     potwierdzić godziny (8–16 czy 9–17), ustawić realny priceRange,
+     dodać współrzędne geo i link do wizytówki Google w sameAs. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ComputerStore"],
+  "@id": "https://drlaptop.pl/#serwis",
+  "name": "drLAPTOP – serwis laptopów i komputerów Gdynia",
+  "legalName": "drLAPTOP Piotr Winnik",
+  "url": "https://drlaptop.pl/",
+  "logo": "https://drlaptop.pl/wp-content/uploads/2023/07/cropped-logo-drlaptop.png",
+  "image": "https://drlaptop.pl/wp-content/uploads/2023/07/naprawa-serwis-urzadzen-laptopow-1024x683.jpeg",
+  "telephone": "+48585005510",
+  "email": "kontakt@drlaptop.pl",
+  "taxID": "9581439296",
+  "priceRange": "50–1500 zł",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Świętojańska 55/3A",
+    "postalCode": "81-393",
+    "addressLocality": "Gdynia",
+    "addressRegion": "pomorskie",
+    "addressCountry": "PL"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00", "closes": "16:00"
+  }],
+  "areaServed": [
+    {"@type": "City", "name": "Gdynia"},
+    {"@type": "City", "name": "Gdańsk"},
+    {"@type": "City", "name": "Sopot"},
+    {"@type": "City", "name": "Reda"},
+    {"@type": "City", "name": "Rumia"},
+    {"@type": "City", "name": "Wejherowo"},
+    {"@type": "Country", "name": "Polska"}
+  ],
+  "sameAs": [
+    "https://www.facebook.com/serwis.drLAPTOP",
+    "https://www.instagram.com/drlaptop.pl/"
+  ]
+}
+</script>
