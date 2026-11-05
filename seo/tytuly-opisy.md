@@ -79,6 +79,8 @@ Wszystkie podstrony marek dostają ten sam układ treści co nowa podstrona ASUS
 
 ## 6. Nowe podstrony (do utworzenia)
 
+Gotowa treść cennika, zamówienia kuriera i laptopów gamingowych jest w folderze `seo/nowe/`.
+
 | Nowy adres | Tytuł SEO | Opis meta |
 |---|---|---|
 | `/cennik/` | Cennik napraw laptopów – Gdynia, Trójmiasto \| drLAPTOP | Ceny wymiany matrycy, baterii, czyszczenia, naprawy po zalaniu i płyty głównej. Bezpłatna diagnoza przy naprawie, pisemna gwarancja. |

@@ -16,6 +16,7 @@ Projekt poprawy strony [drlaptop.pl](https://drlaptop.pl/) (WordPress + Elemento
 | `seo/schema-localbusiness.html` | Dane strukturalne do wklejenia (np. WPCode) |
 | `seo/tytuly-opisy.md` | Tytuły, opisy i H1 dla wszystkich 39 podstron + 5 nowych |
 | `seo/marki/` | Nowa treść 8 podstron marek: ASUS, Apple, Lenovo, MSI, Dell, HP, Acer, Samsung |
+| `seo/nowe/` | Treść 3 nowych podstron: cennik, zamów kuriera, laptopy gamingowe |
 | `seo/marki/_wspolne-sekcje.md` | Sekcje wspólne dla wszystkich marek (szablony globalne Elementora) |
 
 ## Do uzupełnienia przez firmę
