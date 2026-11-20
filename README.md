@@ -4,9 +4,17 @@ Projekt poprawy strony [drlaptop.pl](https://drlaptop.pl/) (WordPress + Elemento
 
 **Zasada nr 1:** nie budujemy strony od nowa i nie zmieniamy adresów istniejących podstron. Jeśli coś usuwamy, ustawiamy przekierowanie 301.
 
+## Podgląd w przeglądarce (bez logowania)
+
+- **Podsumowanie i plan:** https://tenkaisp1.github.io/strona-drlaptop/
+- **Prototyp nowej strony:** https://tenkaisp1.github.io/strona-drlaptop/prototyp/
+
+Strony są oznaczone `noindex`, więc Google ich nie indeksuje (nie konkurują z drlaptop.pl).
+
 ## Zawartość
 | Ścieżka | Co to jest |
 |---|---|
+| `index.html` | Podsumowanie prac i plan (strona startowa GitHub Pages) |
 | `prototyp/` | Klikalny prototyp: strona główna, cennik, zamów kuriera, laptopy gamingowe, podstrony 8 marek (ASUS, Apple, Lenovo, MSI, Dell, HP, Acer, Samsung). Otwórz `prototyp/index.html` w przeglądarce. Przełącznik „Notatki SEO” na górze. |
 | `docs/audyt.md` | Audyt obecnej strony (stan z 05.11.2026) |
 | `docs/konkurencja.md` | Porównanie z serwisgdynia.pl i dobryserwis.eu |

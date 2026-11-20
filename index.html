@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Nowa strona drLAPTOP</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: one calm reading column; status shown as coloured chips, plan as a dated checklist */
+:root{
+  --bg:#f5f7fb; --surface:#ffffff; --surface-2:#eaf0fa; --fg:#121a2b; --muted:#56627a; --line:#d9e1ee;
+  --brand:#0b63f6; --brand-ink:#ffffff; --accent:#ff5a1f;
+  --ok:#0f8a4c; --ok-bg:#e3f5ea; --warn:#a35b00; --warn-bg:#fff1dc; --bad:#c0262d; --bad-bg:#fde6e7;
+  --font:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d121c; --surface:#151c2a; --surface-2:#1b2436; --fg:#e8edf6; --muted:#9ba7bd; --line:#27324a;
+    --brand:#5b95ff; --brand-ink:#0d121c; --accent:#ff7a45;
+    --ok:#4fd18b; --ok-bg:#12301f; --warn:#ffb65c; --warn-bg:#3a2a12; --bad:#ff7a80; --bad-bg:#3a1619;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d121c; --surface:#151c2a; --surface-2:#1b2436; --fg:#e8edf6; --muted:#9ba7bd; --line:#27324a;
+  --brand:#5b95ff; --brand-ink:#0d121c; --accent:#ff7a45;
+  --ok:#4fd18b; --ok-bg:#12301f; --warn:#ffb65c; --warn-bg:#3a2a12; --bad:#ff7a80; --bad-bg:#3a1619;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--font)}
+.wrap{max-width:860px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1,h2,h3{line-height:1.2;margin:0;text-wrap:balance}
+h1{font-size:clamp(1.8rem,5vw,2.5rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.35rem;font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.02rem;font-weight:700}
+p{margin:0}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+header.top{display:grid;gap:10px}
+.logo{font-weight:800;font-size:1.1rem}
+.logo span{color:var(--brand)}
+section{display:grid;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.tldr{background:var(--surface);border:2px solid var(--brand);border-radius:var(--r);padding:20px;display:grid;gap:12px}
+.tldr ul{margin:0;padding-left:1.2em;display:grid;gap:8px}
+.tldr li{max-width:70ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.5em;border-radius:999px;padding:.85em 1.4em;font-weight:800;text-decoration:none;font-size:1.02rem}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-ghost{border:2px solid var(--line);color:var(--fg)}
+.btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.hint{font-size:.9rem;color:var(--muted)}
+.rows{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.row > div{min-width:0}
+.row p{color:var(--muted);font-size:.95rem;margin-top:2px}
+.chip{font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border-radius:6px;padding:.3em .6em;white-space:nowrap}
+.bad{background:var(--bad-bg);color:var(--bad)}
+.warn{background:var(--warn-bg);color:var(--warn)}
+.ok{background:var(--ok-bg);color:var(--ok)}
+.vs{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.95rem}
+.vs th,.vs td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.vs th{background:var(--surface-2);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.vs tr:last-child td{border-bottom:0}
+.scroll{overflow-x:auto}
+.num{font-variant-numeric:tabular-nums;font-weight:800}
+.done{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (max-width:640px){.done{grid-template-columns:1fr}}
+.done div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.done b{display:block}
+.done span{color:var(--muted);font-size:.92rem}
+.plan{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+@media (max-width:560px){.step{grid-template-columns:1fr;gap:6px}}
+.step .when{font-weight:800;color:var(--brand)}
+.step ul{margin:6px 0 0;padding-left:1.1em;display:grid;gap:4px}
+.step > div{min-width:0}
+.ask{display:grid;gap:8px;padding:0;margin:0;list-style:none}
+.ask li{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.ask .box{width:20px;height:20px;border:2px solid var(--muted);border-radius:5px;margin-top:3px}
+.expect{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:640px){.expect{grid-template-columns:1fr}}
+.expect div{background:var(--surface-2);border-radius:12px;padding:14px}
+.expect .num{font-size:1.25rem;display:block}
+.code-wrap{position:relative;min-width:0}
+pre.code{margin:0;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px;overflow-x:auto;font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;max-height:340px}
+.copy{position:absolute;top:10px;right:10px;border:0;border-radius:8px;padding:.45em .8em;font:700 .85rem var(--font);background:var(--brand);color:var(--brand-ink);cursor:pointer}
+.copy:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.howto{display:grid;gap:10px;margin:0;padding-left:1.3em}
+.howto li{max-width:75ch}
+.howto code,.inline-code{font:600 .9em ui-monospace,Menlo,Consolas,monospace;background:var(--surface-2);padding:.1em .35em;border-radius:5px}
+.callout{background:var(--warn-bg);color:var(--fg);border-radius:12px;padding:12px 14px;font-size:.95rem}
+a.inl{color:var(--brand);font-weight:700}
+footer{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+footer a{color:var(--muted)}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="logo">dr<span>LAPTOP</span></div>
+  <div class="eyebrow">Podsumowanie prac · 5 listopada 2026</div>
+  <h1>Nowa strona drLAPTOP: co sprawdziliśmy i co robimy dalej</h1>
+</header>
+
+<div class="tldr">
+  <h2>W skrócie</h2>
+  <ul>
+    <li><b>Strony nie budujemy od nowa.</b> Poprawiamy obecną. Wszystkie adresy podstron zostają, więc nie tracimy obecnych pozycji w Google.</li>
+    <li><b>Główne problemy:</b> strona bardzo wolno ładuje się na telefonie, w Google stawia na Gdańsk zamiast na Gdynię, nie ma cennika, a dane kontaktowe są niespójne.</li>
+    <li><b>Konkurencja</b> (serwisgdynia.pl, dobryserwis.eu) <b>ma słabsze strony</b>, a wygrywa prostymi rzeczami, które naprawimy w kilka dni.</li>
+    <li><b>Teksty i prototyp są gotowe.</b> Do startu potrzebujemy tylko kilku decyzji, przede wszystkim cen.</li>
+  </ul>
+  <div class="cta">
+    <a class="btn btn-accent" href="prototyp/index.html">▶ Otwórz prototyp nowej strony</a>
+  </div>
+  <p class="hint">Prototyp ma 12 stron: główną, cennik, zamów kuriera, laptopy gamingowe i 8 marek. Można w nim wszystko klikać: menu, formularz kuriera, czat w prawym dolnym rogu. Żółte notatki wyjaśniają, po co jest dana zmiana (wyłącza się je przełącznikiem na górze). Ceny „…” są do uzupełnienia.</p>
+</div>
+
+<section>
+  <h2>Co jest dziś nie tak ze stroną</h2>
+  <div class="rows">
+    <div class="row"><span class="chip bad">Pilne</span><div><h3>Na telefonie strona ładuje się 11,6 sekundy</h3><p>Google zaleca poniżej 2,5 s. Wynik PageSpeed na telefonie: <span class="num">68/100</span>. Winne są głównie duże zdjęcie z efektem ruchu na górze strony, ciężkie czcionki z ikonami i zbędne skrypty.</p></div></div>
+    <div class="row"><span class="chip bad">Pilne</span><div><h3>Dwa różne numery telefonu i dwie wersje godzin otwarcia</h3><p>W stopce widać 58 500 55 60, a kliknięcie dzwoni na 55 10. Godziny w Gdyni to raz 8–16, raz 9–17. Google i AI tracą przez to zaufanie do firmy.</p></div></div>
+    <div class="row"><span class="chip bad">Pilne</span><div><h3>Punkty partnerów są pokazane jak nasze oddziały</h3><p>Na mapie jest wizytówka „drLAPTOP Gdańsk” przy ladzie partnera. Zasady Google tego zabraniają, a grozi to zawieszeniem także wizytówki w Gdyni. Trzeba to sprawdzić w pierwszej kolejności.</p></div></div>
+    <div class="row"><span class="chip warn">Ważne</span><div><h3>Strona celuje w Gdańsk, a serwis jest w Gdyni</h3><p>Ludzie wpisują „serwis laptopów Gdynia”, a nasz tytuł zaczyna się od Gdańska. Konkurencja ma Gdynię na pierwszym miejscu.</p></div></div>
+    <div class="row"><span class="chip warn">Ważne</span><div><h3>Brak cennika</h3><p>Ceny to pierwsza rzecz, jakiej szuka klient i którą cytuje AI. Nikt w okolicy nie ma cennika, więc to łatwa przewaga.</p></div></div>
+    <div class="row"><span class="chip warn">Ważne</span><div><h3>Brak przycisku „Zamów kuriera”</h3><p>Serwis wysyłkowy z całej Polski to nasz wyróżnik, ale na stronie go prawie nie widać.</p></div></div>
+    <div class="row"><span class="chip warn">Do poprawy</span><div><h3>Puste i zepsute podstrony, nieaktualne teksty</h3><p>Pusty sklep, podstrona z błędem, niedziałający czat Formilla, Windows 10 w ofercie, ostatni wpis na blogu z czerwca 2025.</p></div></div>
+    <div class="row"><span class="chip ok">Dobre</span><div><h3>Mocna baza</h3><p>Około 40 podstron usług i marek, 34 wpisy na blogu, wynik SEO w PageSpeed <span class="num">100/100</span>. Jest na czym budować.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Konkurencja: dlaczego są wyżej w Google</h2>
+  <div class="scroll">
+  <table class="vs">
+    <thead><tr><th></th><th>serwisgdynia.pl</th><th>dobryserwis.eu</th><th>drlaptop.pl</th></tr></thead>
+    <tbody>
+      <tr><td><b>Gdynia w tytule</b></td><td>tak</td><td>tak</td><td>nie (Gdańsk)</td></tr>
+      <tr><td><b>Szybkość</b></td><td>lekka strona</td><td>bardzo lekka</td><td>ciężka (11,6 s)</td></tr>
+      <tr><td><b>Ilość treści</b></td><td>mało (podstrony po ok. 110 słów)</td><td>jedna strona</td><td><b>najwięcej</b></td></tr>
+      <tr><td><b>Cennik</b></td><td>brak</td><td>brak</td><td>brak → <b>będzie</b></td></tr>
+      <tr><td><b>Kurier z całej Polski</b></td><td>nie</td><td>nie</td><td><b>tak</b></td></tr>
+      <tr><td><b>Opinie Google</b></td><td>?</td><td>4,9 (50 opinii)</td><td>do sprawdzenia</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted">Wniosek: mamy lepszą ofertę i więcej treści. Przegrywamy tytułem, szybkością i opiniami, a wszystkie trzy rzeczy da się poprawić.</p>
+</section>
+
+<section>
+  <h2>Co jest już gotowe</h2>
+  <div class="done">
+    <div><b>✔ Audyt strony</b><span>lista wszystkich problemów z rozwiązaniami</span></div>
+    <div><b>✔ Analiza konkurencji</b><span>serwisgdynia.pl i dobryserwis.eu</span></div>
+    <div><b>✔ Klikalny prototyp</b><span>12 stron, telefon i komputer</span></div>
+    <div><b>✔ Nowe tytuły i opisy w Google</b><span>dla wszystkich 39 podstron</span></div>
+    <div><b>✔ Nowe teksty 8 marek</b><span>ASUS, Apple, Lenovo, MSI, Dell, HP, Acer, Samsung</span></div>
+    <div><b>✔ Nowe podstrony</b><span>cennik, zamów kuriera, laptopy gamingowe</span></div>
+    <div><b>✔ Lista poprawek szybkości</b><span>na podstawie raportu PageSpeed</span></div>
+    <div><b>✔ <a class="inl" href="#kod-dla-google">Kod dla Google</a></b><span>dane firmy, usług i cen do wklejenia (instrukcja niżej)</span></div>
+  </div>
+  <p class="muted">Wszystko leży w repozytorium projektu na GitHubie (strona-drlaptop).</p>
+</section>
+
+<section>
+  <h2>Plan na najbliższe dni</h2>
+  <div class="plan">
+    <div class="step"><div class="when">Dzień 1</div><div><h3>Decyzje i zabezpieczenie</h3><ul>
+      <li>Piotrek podejmuje decyzje z listy poniżej, najważniejsze są ceny.</li>
+      <li>Kopia całej strony i wersja testowa, żeby niczego nie zepsuć.</li>
+      <li>Sprawdzenie wizytówek Google (Gdynia, Gdańsk).</li></ul></div></div>
+    <div class="step"><div class="when">Dzień 2</div><div><h3>Szybkie poprawki</h3><ul>
+      <li>Jeden telefon i jedne godziny w całej stronie i w wizytówce.</li>
+      <li>Nowe tytuły z Gdynią na stronie głównej i podstronach marek.</li>
+      <li>Usunięcie zepsutej podstrony i niedziałającego czatu.</li>
+      <li><a class="inl" href="#kod-dla-google">Kod dla Google z danymi firmy</a> (instrukcja niżej).</li></ul></div></div>
+    <div class="step"><div class="when">Dzień 3–4</div><div><h3>Szybkość na telefonie</h3><ul>
+      <li>Lżejsza górna sekcja, mniejsze zdjęcia, lżejsze czcionki, cache.</li>
+      <li>Cel: ładowanie poniżej 2,5 s, wynik PageSpeed powyżej 85.</li></ul></div></div>
+    <div class="step"><div class="when">Dzień 5–7</div><div><h3>Cennik i kurier</h3><ul>
+      <li>Nowe podstrony „Cennik” i „Zamów kuriera” z formularzem.</li>
+      <li>Nowe menu z pomarańczowym przyciskiem „Zamów kuriera”.</li>
+      <li>Pasek „Zadzwoń / Zamów kuriera” na dole ekranu w telefonie.</li></ul></div></div>
+    <div class="step"><div class="when">Tydzień 2</div><div><h3>Nowa strona główna i marki</h3><ul>
+      <li>Strona główna według prototypu.</li>
+      <li>Nowe teksty 8 podstron marek i strona „Laptopy gamingowe”.</li>
+      <li>Zdjęcia z warsztatu i pierwsze opisy prawdziwych napraw.</li>
+      <li>Sekcja „Co klienci o nas mówią” z prawdziwymi opiniami z Google (wtyczka, przewijane karty).</li></ul></div></div>
+    <div class="step"><div class="when">Codziennie</div><div><h3>Opinie w Google</h3><ul>
+      <li>SMS z prośbą o opinię po każdej naprawie i odpowiedź na każdą opinię.</li>
+      <li>Cel: ponad 60 opinii z oceną co najmniej 4,8 w ciągu 2–3 miesięcy.</li></ul></div></div>
+    <div class="step"><div class="when">Później</div><div><h3>Integracje</h3><ul>
+      <li>Automatyczne zamawianie kuriera (InPost, DPD, DHL) i zlecenia w Subiekcie.</li>
+      <li>SMS-y o statusie naprawy, sklep z laptopami po serwisie, asystent AI.</li></ul></div></div>
+  </div>
+</section>
+
+<section id="kod-dla-google">
+  <h2>Kod dla Google z danymi firmy: co to jest i jak go wkleić</h2>
+  <div class="card" style="display:grid;gap:14px">
+    <p><b>Co to jest:</b> krótki, niewidoczny dla klientów fragment kodu w nagłówku strony. Podaje Google, Bingowi i asystentom AI dane firmy w formacie, który odczytują bez zgadywania: nazwę, adres w Gdyni, telefon, godziny, NIP, obszar działania i linki do Facebooka oraz Instagrama. <b>Wygląd strony się nie zmienia.</b></p>
+    <p><b>Po co:</b> dziś Google widzi na stronie dwa telefony i dwie wersje godzin, a stary kod opisuje lady partnerów w Gdańsku i Redzie jako nasze oddziały. Nowy kod daje jedną, poprawną wersję danych. Pomaga w wynikach lokalnych („serwis laptopów Gdynia”), w mapach i w odpowiedziach AI.</p>
+    <div class="callout"><b>Przed wklejeniem:</b> ustal godziny (w kodzie jest tymczasowo 8–16) i główny telefon (w kodzie 58 500 55 10). Muszą się zgadzać z tym, co widać na stronie i w wizytówce Google.</div>
+    <h3>Krok po kroku (ok. 15 minut)</h3>
+    <ol class="howto">
+      <li><b>Zrób kopię strony</b> (panel hostingu albo wtyczka UpdraftPlus).</li>
+      <li><b>Znajdź stary kod i go wyłącz.</b> Szukaj fragmentu <code>"LocalBusiness"</code> z <code>"department"</code>. Najczęściej jest w jednym z miejsc:
+        wtyczka do wstawiania kodu (WPCode / Insert Headers and Footers), widżet „HTML” w Elementorze na stronie głównej lub w stopce, albo Wygląd → Edytor plików motywu → <code>header.php</code>. Danych dodawanych automatycznie przez Yoast nie ruszaj.</li>
+      <li><b>Zainstaluj wtyczkę WPCode</b> (jeśli jej nie ma): Wtyczki → Dodaj nową → „WPCode” → Zainstaluj → Włącz.</li>
+      <li><b>Dodaj nowy fragment:</b> Code Snippets → Add Snippet → „Add Your Custom Code” → typ <b>HTML Snippet</b>.</li>
+      <li><b>Wklej kod</b> spod tej instrukcji (przycisk „Kopiuj”). Popraw godziny, jeśli trzeba.</li>
+      <li><b>Ustaw miejsce:</b> Insertion → „Site Wide Header”, a w „Smart Conditional Logic” pokaż tylko na stronie głównej (Page → Homepage). Zapisz i włącz fragment (Active).</li>
+      <li><b>Sprawdź:</b> wpisz <span class="inline-code">https://drlaptop.pl/</span> w teście Google
+        <a class="inl" href="https://search.google.com/test/rich-results">search.google.com/test/rich-results</a> albo w
+        <a class="inl" href="https://validator.schema.org">validator.schema.org</a>. Powinien się pokazać „LocalBusiness” z danymi firmy, bez błędów i tylko raz (jeśli widać dwa, stary kod nadal działa).</li>
+    </ol>
+    <div class="code-wrap">
+      <button class="copy" id="copyBtn" type="button">Kopiuj kod</button>
+      <pre class="code" id="schemaCode">&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: [&quot;LocalBusiness&quot;, &quot;ComputerStore&quot;],
+  &quot;@id&quot;: &quot;https://drlaptop.pl/#serwis&quot;,
+  &quot;name&quot;: &quot;drLAPTOP – serwis laptopów i komputerów Gdynia&quot;,
+  &quot;legalName&quot;: &quot;drLAPTOP Piotr Winnik&quot;,
+  &quot;url&quot;: &quot;https://drlaptop.pl/&quot;,
+  &quot;logo&quot;: &quot;https://drlaptop.pl/wp-content/uploads/2023/07/cropped-logo-drlaptop.png&quot;,
+  &quot;image&quot;: &quot;https://drlaptop.pl/wp-content/uploads/2023/07/naprawa-serwis-urzadzen-laptopow-1024x683.jpeg&quot;,
+  &quot;telephone&quot;: &quot;+48585005510&quot;,
+  &quot;email&quot;: &quot;kontakt@drlaptop.pl&quot;,
+  &quot;taxID&quot;: &quot;9581439296&quot;,
+  &quot;priceRange&quot;: &quot;50–1500 zł&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;streetAddress&quot;: &quot;ul. Świętojańska 55/3A&quot;,
+    &quot;postalCode&quot;: &quot;81-393&quot;,
+    &quot;addressLocality&quot;: &quot;Gdynia&quot;,
+    &quot;addressRegion&quot;: &quot;pomorskie&quot;,
+    &quot;addressCountry&quot;: &quot;PL&quot;
+  },
+  &quot;openingHoursSpecification&quot;: [{
+    &quot;@type&quot;: &quot;OpeningHoursSpecification&quot;,
+    &quot;dayOfWeek&quot;: [&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;],
+    &quot;opens&quot;: &quot;08:00&quot;, &quot;closes&quot;: &quot;16:00&quot;
+  }],
+  &quot;areaServed&quot;: [
+    {&quot;@type&quot;: &quot;City&quot;, &quot;name&quot;: &quot;Gdynia&quot;},
+    {&quot;@type&quot;: &quot;City&quot;, &quot;name&quot;: &quot;Gdańsk&quot;},
+    {&quot;@type&quot;: &quot;City&quot;, &quot;name&quot;: &quot;Sopot&quot;},
+    {&quot;@type&quot;: &quot;City&quot;, &quot;name&quot;: &quot;Reda&quot;},
+    {&quot;@type&quot;: &quot;City&quot;, &quot;name&quot;: &quot;Rumia&quot;},
+    {&quot;@type&quot;: &quot;City&quot;, &quot;name&quot;: &quot;Wejherowo&quot;},
+    {&quot;@type&quot;: &quot;Country&quot;, &quot;name&quot;: &quot;Polska&quot;}
+  ],
+  &quot;sameAs&quot;: [
+    &quot;https://www.facebook.com/serwis.drLAPTOP&quot;,
+    &quot;https://www.instagram.com/drlaptop.pl/&quot;
+  ]
+}
+&lt;/script&gt;</pre>
+    </div>
+    <p class="muted" style="font-size:.9rem">Podobny kod jest przygotowany dla podstron marek, cennika, kuriera i strony gamingowej (na końcu plików w repozytorium, foldery <span class="inline-code">seo/marki/</span> i <span class="inline-code">seo/nowe/</span>). Te wklejamy dopiero razem z nową treścią danej podstrony, bo muszą się zgadzać z tym, co na niej widać.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Czego potrzebujemy od Piotrka</h2>
+  <ul class="ask">
+    <li><span class="box" aria-hidden="true"></span><div><b>Ceny „od”</b> dla najczęstszych napraw (matryca, bateria, czyszczenie, zalanie, płyta główna itd.).</div></li>
+    <li><span class="box" aria-hidden="true"></span><div><b>Główny numer telefonu</b> (55 10 czy 55 60) i <b>godziny w Gdyni</b> (8–16 czy 9–17).</div></li>
+    <li><span class="box" aria-hidden="true"></span><div><b>Kurier:</b> ile kosztuje w obie strony i czy jest darmowy od jakiejś kwoty naprawy.</div></li>
+    <li><span class="box" aria-hidden="true"></span><div><b>Gwarancja na naprawę</b>: ile miesięcy. <b>Opłata za diagnozę</b>, gdy klient zrezygnuje z naprawy.</div></li>
+    <li><span class="box" aria-hidden="true"></span><div><b>Wizytówka Google „Gdańsk”</b>: kto nią zarządza i ile ma opinii. Od tego zależy, co z nią zrobić.</div></li>
+    <li><span class="box" aria-hidden="true"></span><div><b>Zgoda na zbieranie opinii SMS-em</b> po każdej naprawie.</div></li>
+    <li><span class="box" aria-hidden="true"></span><div><b>Regulamin serwisu wysyłkowego</b> do sprawdzenia przez prawnika (sprzedaż usług na odległość).</div></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Kiedy zobaczymy efekty</h2>
+  <div class="expect">
+    <div><span class="num">2–4 tygodnie</span>nowe tytuły i szybsza strona zaczynają działać w Google</div>
+    <div><span class="num">1–2 miesiące</span>cennik i nowe podstrony przynoszą więcej telefonów</div>
+    <div><span class="num">2–3 miesiące</span>więcej opinii, realna szansa na wyprzedzenie konkurencji w mapach Google</div>
+  </div>
+  <div class="cta" style="margin-top:6px">
+    <a class="btn btn-accent" href="prototyp/index.html">▶ Otwórz prototyp</a>
+    <a class="btn btn-ghost" href="prototyp/cennik.html">Cennik</a>
+    <a class="btn btn-ghost" href="prototyp/zamow-kuriera.html">Zamów kuriera</a>
+    <a class="btn btn-ghost" href="prototyp/serwis-laptopow-gamingowych.html">Laptopy gamingowe</a>
+  </div>
+</section>
+
+<footer>Przygotowane na podstawie analizy drlaptop.pl, raportu Google PageSpeed i stron konkurencji (stan na 5.11.2026). Prototyp pokazuje kierunek. Zmiany robimy na obecnej stronie WordPress, bez zmiany adresów podstron.</footer>
+<script>
+(function(){
+  var b=document.getElementById('copyBtn'), pre=document.getElementById('schemaCode');
+  if(!b||!pre) return;
+  b.addEventListener('click', function(){
+    var txt=pre.textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Zaznaczono – Ctrl+C';}
+    try{navigator.clipboard.writeText(txt).then(function(){b.textContent='Skopiowano ✓';setTimeout(function(){b.textContent='Kopiuj kod'},2000)},sel);}catch(e){sel();}
+  });
+})();
+</script>
+
+</div>
+</body>
+</html>
